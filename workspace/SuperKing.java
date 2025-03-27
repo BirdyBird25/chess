@@ -41,9 +41,8 @@ public class SuperKing extends Piece{
       ArrayList<Square> controlledSquares= new ArrayList<>();
 
 
-      for (int r = start.getRow()+1; r < board.length; r++) {
+      for (int r = start.getRow()+1, c = start.getCol()+1; r < board.length &&  c < board[r].length; r++, c++) {
         //and to the right 
-        for (int c = start.getCol()+1; c < board[r].length; c++) {
 
           if (!(board[r][c].isOccupied())) {
             controlledSquares.add(board[r][c]);
@@ -51,12 +50,11 @@ public class SuperKing extends Piece{
           
         }
 
-      }
+      
       
       //look above
-      for (int r2 = start.getRow() - 1; r2 >= 0; r2--) {
+      for (int r2 = start.getRow() - 1, c2 = start.getCol() + 1; r2 >= 0 && c2 < board[r2].length; r2--, c2++) {
           //and to the left
-        for (int c2 = start.getCol() + 1; c2 < board[r2].length; c2++) {
           
           if (!(board[r2][c2].isOccupied())) {
             controlledSquares.add(board[r2][c2]);
@@ -65,13 +63,10 @@ public class SuperKing extends Piece{
 
             }
           
-
-        }
       
 
-      for (int r3 = start.getRow() + 1; r3 < board.length; r3++) {
+      for (int r3 = start.getRow() + 1,  c3 = start.getCol() - 1; r3 < board.length && c3 >= 0; r3++, c3--) {
         //and to the left
-      for (int c3 = start.getCol() - 1; c3 >= 0; c3--) {
         
         if (!(board[r3][c3].isOccupied())) {
           controlledSquares.add(board[r3][c3]);
@@ -79,14 +74,10 @@ public class SuperKing extends Piece{
         
 
           }
-        
-
-      }
+      
     
 
-    for (int r4 = start.getRow() - 1; r4 >= 0; r4--) {
-      //and to the left
-    for (int c4 = start.getCol() - 1; c4 < board[r4].length; c4--) {
+    for (int r4 = start.getRow() - 1, c4 = start.getCol() - 1; r4 >= 0 && c4 < board[r4].length; r4--, c4--) {
       
       if (!(board[r4][c4].isOccupied())) {
         controlledSquares.add(board[r4][c4]);
@@ -96,56 +87,54 @@ public class SuperKing extends Piece{
         }
       
 
-    }
+    
   
 
-  for (int r5 = 0; r5 < board.length; r5++) {
+  // for (int r5 = 0; r5 < board.length; r5++) {
 
-    for (int c5 = 0; c5 < board[c5].length; c5++) {
+  //   for (int c5 = 0; c5 < board[c5].length; c5++) {
 
-      if ((start.getCol() + 1 < 8) && start.getRow() + 1 < 8) {
+  //     if ((start.getCol() + 1 < 8) && start.getRow() + 1 < 8) {
 
-        if (r5 + 2 < 8 && c5 + 1< 8 && !(board[r5 + 2][c5 + 1].isOccupied())) {
-          controlledSquares.add(board[r5 + 2][c5 + 1]);
-        }
+  //       if (r5 + 2 < 8 && c5 + 1< 8 && !(board[r5 + 2][c5 + 1].isOccupied())) {
+  //         controlledSquares.add(board[r5 + 2][c5 + 1]);
+  //       }
 
-        if (r5 + 2 < 8 && c5 - 1 >= 0 && !(board[r5 + 2][c5 - 1]).isOccupied()) {
-          controlledSquares.add(board[r5 + 2][c5 - 1]);
-        }
+  //       if (r5 + 2 < 8 && c5 - 1 >= 0 && !(board[r5 + 2][c5 - 1]).isOccupied()) {
+  //         controlledSquares.add(board[r5 + 2][c5 - 1]);
+  //       }
 
-        if (r5 + 1 < 8 && c5 + 2 < 8 && !(board[r5 + 1][c5 + 2]).isOccupied()) {
-          controlledSquares.add(board[r5 + 1][c5 + 2]);
-        }
+  //       if (r5 + 1 < 8 && c5 + 2 < 8 && !(board[r5 + 1][c5 + 2]).isOccupied()) {
+  //         controlledSquares.add(board[r5 + 1][c5 + 2]);
+  //       }
 
-        if (r5 - 1 >= 0 && c5 + 2 < 8 && !(board[r5 - 1][c5 + 2]).isOccupied()) {
-          controlledSquares.add(board[r5 - 1][c5 + 2]);
-        }
+  //       if (r5 - 1 >= 0 && c5 + 2 < 8 && !(board[r5 - 1][c5 + 2]).isOccupied()) {
+  //         controlledSquares.add(board[r5 - 1][c5 + 2]);
+  //       }
 
-        if (r5 - 1 >= 0 && c5 - 2 >= 0 && !(board[r5 - 1][c5 - 2]).isOccupied()) {
-          controlledSquares.add(board[r5 - 2][c5 - 1]);
-        }
+  //       if (r5 - 1 >= 0 && c5 - 2 >= 0 && !(board[r5 - 1][c5 - 2]).isOccupied()) {
+  //         controlledSquares.add(board[r5 - 2][c5 - 1]);
+  //       }
 
-        if (r5 - 2 >= 0 && c5 + 1 < 8 && !(board[r5 - 2][c5 + 1]).isOccupied()) {
-          controlledSquares.add(board[r5 - 1][c5 - 2]);
-          }
+  //       if (r5 - 2 >= 0 && c5 + 1 < 8 && !(board[r5 - 2][c5 + 1]).isOccupied()) {
+  //         controlledSquares.add(board[r5 - 1][c5 - 2]);
+  //         }
 
-        if (r5 - 2 >= 0 && c5 - 1 >= 0 && !(board[r5 - 2][c5 - 1]).isOccupied() && board[r5 - 1][c5 - 2].getColor()) {
-          controlledSquares.add(board[r5 - 1][c5 - 2]);   
+  //       if (r5 - 2 >= 0 && c5 - 1 >= 0 && !(board[r5 - 2][c5 - 1]).isOccupied() && board[r5 - 1][c5 - 2].getColor()) {
+  //         controlledSquares.add(board[r5 - 1][c5 - 2]);   
 
-      }
+  //     }
 
-    }
+    
    
 
-  }
-
-      return controlledSquares;
-
-}
+      
 
       return controlledSquares;
 
     }
+
+    
 
 
     //   for (int r = 0; r < board.length; r++) {
