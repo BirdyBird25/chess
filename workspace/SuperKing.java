@@ -268,55 +268,6 @@ public class SuperKing extends Piece{
       
 
      }
-   
-
-
-
-  // for (int r5 = 0; r5 < board.length; r5++) {
-
-  //   for (int c5 = 0; c5 < board[r5].length; c5++) {
-
-  //     if ((start.getCol() + 1 < 8) && start.getRow() + 1 < 8) {
-
-  //       if (r5 + 2 < 8 && c5 + 1< 8 && !(b.getSquareArray()[r5 + 2][c5 + 1].isOccupied()) && b.getSquareArray()[r5 + 2][c5 + 1].getColor()) {
-  //         moves.add(b.getSquareArray()[r5 + 2][c5 + 1]);
-  //       }
-
-  //       if (r5 + 2 < 8 && c5 - 1 >= 0 && !(b.getSquareArray()[r5 + 2][c5 - 1]).isOccupied() && b.getSquareArray()[r5 + 2][c5 - 1].getColor()) {
-  //         moves.add(b.getSquareArray()[r5 + 2][c5 - 1]);
-  //       }
-
-  //       if (r5 + 1 < 8 && c5 + 2 < 8 && !(b.getSquareArray()[r5 + 1][c5 + 2]).isOccupied() && b.getSquareArray()[r5 + 1][c5 + 2].getColor()) {
-  //         moves.add(b.getSquareArray()[r5 + 1][c5 + 2]);
-  //       }
-
-  //       if (r5 + 1 < 8 && c5 - 2 >= 0 && !(b.getSquareArray()[r5 + 1][c5 - 2]).isOccupied() && b.getSquareArray()[r5 + 1][c5 - 2].getColor()) {
-  //       moves.add(b.getSquareArray()[r5 + 1][c5 - 2]);
-  //       }
-
-  //       if (r5 - 1 >= 0 && c5 + 2 < 8 && !(b.getSquareArray()[r5 - 1][c5 + 2]).isOccupied() && b.getSquareArray()[r5 - 1][c5 + 2].getColor()) {
-  //         moves.add(b.getSquareArray()[r5 - 1][c5 + 2]);
-  //       }
-
-  //       if (r5 - 1 >= 0 && c5 - 2 >= 0 && !(b.getSquareArray()[r5 - 1][c5 - 2]).isOccupied() && b.getSquareArray()[r5 - 1][c5 - 2].getColor()) {
-  //         moves.add(b.getSquareArray()[r5 - 1][c5 - 2]);
-  //       }
-
-  //       if (r5 - 2 >= 0 && c5 + 1 < 8 && !(b.getSquareArray()[r5 - 2][c5 + 1]).isOccupied() && b.getSquareArray()[r5 - 2][c5 + 1].getColor()) {
-  //         moves.add(b.getSquareArray()[r5 - 2][c5 + 1]);
-  //         }
-
-  //       if (r5 - 2 >= 0 && c5 - 1 >= 0 && !(b.getSquareArray()[r5 - 2][c5 - 1]).isOccupied() && b.getSquareArray()[r5 - 2][c5 - 1].getColor()) {
-  //         moves.add(b.getSquareArray()[r5 - 2][c5 - 1]);
-
-  //       }
-
-  //     }
-
-  //   }
-   
-  //   return moves;
-  //   }
 
     return moves;
 
