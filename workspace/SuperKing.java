@@ -82,51 +82,8 @@ public class SuperKing extends Piece{
       if (!(board[r4][c4].isOccupied())) {
         controlledSquares.add(board[r4][c4]);
       }
-      
 
         }
-      
-
-    
-  
-
-  // for (int r5 = 0; r5 < board.length; r5++) {
-
-  //   for (int c5 = 0; c5 < board[c5].length; c5++) {
-
-  //     if ((start.getCol() + 1 < 8) && start.getRow() + 1 < 8) {
-
-  //       if (r5 + 2 < 8 && c5 + 1< 8 && !(board[r5 + 2][c5 + 1].isOccupied())) {
-  //         controlledSquares.add(board[r5 + 2][c5 + 1]);
-  //       }
-
-  //       if (r5 + 2 < 8 && c5 - 1 >= 0 && !(board[r5 + 2][c5 - 1]).isOccupied()) {
-  //         controlledSquares.add(board[r5 + 2][c5 - 1]);
-  //       }
-
-  //       if (r5 + 1 < 8 && c5 + 2 < 8 && !(board[r5 + 1][c5 + 2]).isOccupied()) {
-  //         controlledSquares.add(board[r5 + 1][c5 + 2]);
-  //       }
-
-  //       if (r5 - 1 >= 0 && c5 + 2 < 8 && !(board[r5 - 1][c5 + 2]).isOccupied()) {
-  //         controlledSquares.add(board[r5 - 1][c5 + 2]);
-  //       }
-
-  //       if (r5 - 1 >= 0 && c5 - 2 >= 0 && !(board[r5 - 1][c5 - 2]).isOccupied()) {
-  //         controlledSquares.add(board[r5 - 2][c5 - 1]);
-  //       }
-
-  //       if (r5 - 2 >= 0 && c5 + 1 < 8 && !(board[r5 - 2][c5 + 1]).isOccupied()) {
-  //         controlledSquares.add(board[r5 - 1][c5 - 2]);
-  //         }
-
-  //       if (r5 - 2 >= 0 && c5 - 1 >= 0 && !(board[r5 - 2][c5 - 1]).isOccupied() && board[r5 - 1][c5 - 2].getColor()) {
-  //         controlledSquares.add(board[r5 - 1][c5 - 2]);   
-
-  //     }
-
-    
-   
 
       
 
@@ -134,19 +91,6 @@ public class SuperKing extends Piece{
 
     }
 
-    
-
-
-    //   for (int r = 0; r < board.length; r++) {
-    //     for (int c = 0; c < board[r].length; c++) {
-    //       if (start.getLegalMoves(this, fromMoveSquare).contains(endSquare)) {
-    //         controlledSquares.add(endSquare);
-    //       }
-    //     }
-    //   }
-
-
-    //  return null;
 
     
 
