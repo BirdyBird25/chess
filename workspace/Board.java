@@ -195,8 +195,9 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
     // Pre condition: there has to be a mouse that is controlling the board, like by
     // clicking the pieces
     // Post condition: This decides whether a move is legal, or allowed, and where
-    // the piece that is
-    // clicked on will move to
+    // the piece that is clicked on will move to; also, decides if we're in check or not, or if the
+    //square we're moving into is in check; if so, it goes back to the original square
+
     @Override
     public void mouseReleased(MouseEvent e) {
         Square endSquare = (Square) this.getComponentAt(new Point(e.getX(), e.getY()));
@@ -266,6 +267,9 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
     @Override
     public void mouseExited(MouseEvent e) {
     }
+
+    //precondition - the board is initialized and contains a king of either color. The boolean kingColor corresponds to the color of the king we wish to know the status of.
+    //postcondition - returns true of the king is in check and false otherwise.
 
     public boolean isInCheck(boolean kingColor) {
 
