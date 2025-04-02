@@ -210,12 +210,24 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
 
         if (currPiece != null) {
             ArrayList<Square> theLegalMoves = currPiece.getLegalMoves(this, fromMoveSquare);
+            
 
             if (theLegalMoves.contains(endSquare) && whiteTurn == currPiece.getColor()) {
+
+                SuperKing temp = endSquare.getOccupyingPiece();
                 endSquare.put(currPiece);
                 fromMoveSquare.put(null);
-                whiteTurn = !whiteTurn;
-            } 
+
+                //if we're in check undo that move
+
+                if (isInCheck(whiteTurn)) {
+                    fromMoveSquare.put(currPiece);
+                    endSquare.put(temp);
+                } else {
+                    whiteTurn = !whiteTurn;
+                }
+            
+            }
         }
 
         fromMoveSquare.setDisplay(true);
@@ -253,6 +265,28 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
 
     @Override
     public void mouseExited(MouseEvent e) {
+    }
+
+    public boolean isInCheck(boolean kingColor) {
+
+        for (int r = 0; r < board.length; r++) {
+            for (int c = 0; c < board[r].length; c++) {
+                if (board[r][c].isOccupied() && board[r][c].getOccupyingPiece().getColor() != kingColor) {
+                
+                        ArrayList <Square> secondControlledSquares = board[r][c].getOccupyingPiece().getControlledSquares(board, board[r][c]);
+                        for (int i = 0; i < secondControlledSquares.size(); i++) {
+                                if (board[r][c].getOccupyingPiece().getControlledSquares(board, board[r][c]).contains(board[r][c])) {
+                                    return true;
+                                }
+                        }
+                    }
+
+                }
+
+            }
+
+            return false;
+
     }
 
 }
